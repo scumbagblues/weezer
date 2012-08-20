@@ -1,0 +1,29 @@
+<?php
+echo $this->doctype('HTML5');
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+$this->headTitle()->setSeparator(' - ');
+//$this->headTitle('Sistema Administrativo');
+
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+	<head>
+		<?php echo $this->headMeta(); ?>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<?php echo $this->headTitle(); ?>
+		<?php echo $this->jQuery();?>
+		<?php echo $this->headScript()->prependFile($this->baseUrl() . "/js/bootbox.js");?>
+		<link type="text/css" rel="stylesheet"
+			href="<?php echo $this->baseUrl() . '/css/bootstrap-responsive.min.css'?>" />
+		<link type="text/css" rel="stylesheet"
+			href="<?php echo $this->baseUrl() . '/css/bootstrap.min.css'?>" />
+		<link type="text/css" rel="stylesheet" href="<?php echo  $this->baseUrl().'/css/jquery-ui.css'?>" />
+	</head>
+	<body>
+	<header>
+		<h1>Titulo aqui</h1>
+	</header>
+		<?php echo $this->layout()->content; ?>
+	<footer>
+		Footer aqui
+	</footer>
+    </body>
