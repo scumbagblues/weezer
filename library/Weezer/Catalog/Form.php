@@ -10,6 +10,7 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
 	protected $_max_lenght;
 	protected $_table_form_name;
 	protected $_edit_form_data;
+	protected $_action_form;
 	protected $_decorators_default 	= array('Composite');
 	protected $_filters_default 		= array('StringTrim','StripTags');
 	
@@ -24,13 +25,22 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
 		$this->_table_form_name = $table_form;
 	}
 	
+	/**
+	 * 
+	 * Método para pasarle la acción Ej: "Agregar usuario"
+	 * @param unknown_type $action_form
+	 */
+	public function setActionForm($action_form){
+		$this->_action_form = $action_form;
+	}
+	
 	
 	/**
 	 * (non-PHPdoc)
 	 * @see Zend_Form::render()
 	 */
 	public function render($view = NULL){
-		
+		return parent::render($view);	
 	}
 	
 	/**
@@ -44,7 +54,7 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
 		//Path hacia los decoradores
 		$this->addElementPrefixPaths(array(
 			'decorator' => array(
-				'Administrativo_Form_Decorator' => 'Administrativo/Form/Decorator/'
+				'Weezer_Form_Decorator' => 'Weezer/Form/Decorator/'
 				)
 			)
 		);
@@ -80,7 +90,7 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
     				
     				//Se toman las etiquetas de catalogs.ini
     				if (array_key_exists($campo, $label_fields)){
-    					$options['label'] = $label_fields[$element_object->name];
+    					$options['label'] = utf8_encode($label_fields[$element_object->name]);
     				}else{
     					//Se toma el nombre por default del campo (su nombre en la BD)
     					$options['label'] = $element_object->name;
@@ -138,6 +148,8 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
     				$element = $this->addElement($element_object->html_type, $element_object->name, $options );
     			}
     		}
+    		//FIXME Agregar etiqueta de "guardar" en catalogs/config.ini
+    		$this->addElement ( 'submit', 'Guardar', array ('class' => 'btn btn-primary btn-large', 'decorators' => array ('Submit' ) ) );
 		}
 	}
 	
@@ -244,24 +256,24 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
 	 */
 	public function setFormParams($params){
 		$num_args = func_num_args();
-		
-		if ($num_args > 0){
-			$form_params = func_get_arg(0);
-			if (array_key_exists('decorators', $form_params)){
-				$form_decorators = $form_params['decorators'];
-			}
+		//var_dump($params);die;
+		if (!empty($params)){
+			if ($num_args > 0){
+				$form_params = func_get_arg(0);
+				$attribs = $form_params['attribs'];
+				if (array_key_exists('decorators', $attribs)){
+					$form_decorators = $attribs['decorators'];
+				}
 			
-			if (array_key_exists('field_attribs', $form_params)){
-				$form_field_attribs = $form_params['field_attribs'];
-			}
-			if (array_key_exists('form_data', $form_params)){
-				$form_data = $form_params['form_data'];
-			}
-	
+				if (array_key_exists('field_attribs', $attribs)){
+					$form_field_attribs = $attribs['field_attribs'];
+				}
+		    }
+		
+			$this->_fields_decorators 	= $form_decorators;
+			$this->_field_attribs 		= $form_field_attribs;
 		}
 		
-		$this->_fields_decorators 	= $form_decorators;
-		$this->_field_attribs 		= $form_field_attribs;
 	}
 	
 	/**

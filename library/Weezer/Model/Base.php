@@ -10,7 +10,11 @@ class Weezer_Model_Base extends Zend_Db_Table_Abstract{
 	
 	public $_table_prefix = null;
 	
-	public function preSave($form, $form_data){
+	public function init(){
+		
+	}
+	
+	public function preSave(& $form, & $form_data){
 		return TRUE;
 	}
 	
@@ -66,5 +70,30 @@ class Weezer_Model_Base extends Zend_Db_Table_Abstract{
     public function getPrefix(){
         return $this->_table_prefix;
     }
+    
+	public function getDefaultData()
+    {
+	    $data["{$this->_table_prefix}_uid"] = Zend_Auth::getInstance()->getIdentity()->usu_id;
+	    $data["{$this->_table_prefix}_udt"] = date('Y-m-d H:i:s');
+	    
+	    return $data;
+    }
+    
+	public function addElements($data){
+	    //TODO insertar datos
+	    //TODO crear log
+	    $data = array_merge($data, $this->getDefaultData());
+	    $this->insert($data);
+	}
+	
+	public function updateElements($data,$id = null,$where = null){
+		
+		if (!is_null($id)){
+			 $where_update = "{$this->_table_prefix}_id = '{$id}'";
+		}else if (!is_null($where)){
+			$where_update = $where;
+		}
+		$this->update($data, $where_update);
+	}
 	
 }

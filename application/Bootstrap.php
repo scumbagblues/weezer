@@ -14,8 +14,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 			->setUiLocalPath($base_url .'js/jquery/jquery-ui-1.8.13.custom.min.js')
 			->uiEnable();//enable ui
 		//Se instancia autoloader para libreria PHPExcel
-		$excel_autoloader = Zend_Loader_Autoloader::getInstance();
-    	$excel_autoloader->pushAutoloader(new Weezer_ExcelAutoloader());
+		//$excel_autoloader = Zend_Loader_Autoloader::getInstance();
+    	//$excel_autoloader->pushAutoloader(new Weezer_ExcelAutoloader());
 			
 	}
 

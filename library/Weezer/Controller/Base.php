@@ -10,16 +10,37 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 	protected $_is_new;
 	protected $_action_form;
 	protected $_form_table;
-	protected $_redirect_after_post = FALSE;
+	protected $_redirect_after_post = TRUE;
 	
 	public function getFormFields(){
 		
 	}
 	
+	/**
+	 * 
+	 * Método para crear la forma ya sea para agregar o editar
+	 * @param string $type   | el tipo de forma agregar = 'add' o editar = 'edit'
+	 * @param string $table  | la tabla de la forma
+	 * @param array  $params | parametros a enviar a la forma hasta el momento recibe: 'decorators','enctype_flag','redirect'
+	 */
 	public function createForm($type,$table,$params = array()){
 		
-		$this->_form_table = $table;
-		$model = new $this->_form_table;
+		$this->_form_table 	= $table;
+		
+		$model 				= new $this->_form_table ();
+		//var_dump($model);die;
+		$this->setTypeForm($type);
+		//Se pasa la bandera para saber si es tiene que cambiar la forma
+		//para procesar archivos
+		if (isset($params['attribs']['enctype_flag'])){
+			$flag_enc_type = $params['attribs']['enctype_flag'];
+		}else{
+			$flag_enc_type = FALSE;
+		}
+		
+		if (isset($params['attribs']['redirect'])){
+			$this->_redirect_after_post = $params['attribs']['redirect'];
+		}
 		
 		if ($this->getRequest()->isPost()){
 			$form_data = $this->getRequest()->getPost();
@@ -29,14 +50,6 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 				$db_id = $this->_getParam('id');
 				$form_data = $model->getData($db_id);
 			}
-		}
-		
-		//Se pasa la bandera para saber si es tiene que cambiar la forma
-		//para procesar archivos
-		if (isset($params['attribs']['enctype_flag'])){
-			$flag_enc_type = $params['attribs']['enctype_flag'];
-		}else{
-			$flag_enc_type = FALSE;
 		}
 		
 		$form_params = array(
@@ -52,8 +65,31 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 		
 		
 		$form = new Weezer_Catalog_Form($form_params);
-		
+		//var_dump($form);die;
 		$this->view->form = $form;
+		
+		if ($this->getRequest()->isPost()){
+			//Si la forma es valida y el preSave devuelve TRUE..
+			if ($form->isValid($form_data) &&  $model->preSave($form, $form_data)){
+				//Se guardan los datos
+				if ($this->_is_new){
+					$model->addElements($form_data);
+				}else{
+					//update
+					$id = $this->_getParam('id');
+					$model->updateElements($form_data,$id);
+				}
+				//Se redirige en caso de asi indicarlo
+				$this->redirectAfterPost();
+			}else{
+				$form->populate($form_data);
+			}
+		}else{
+			//Si es edición
+			if (!$this->_is_new){
+				$form->populate($form_data);
+			}
+		}
 	}
 	
 	/**
@@ -73,6 +109,14 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 	}
 	
 	public function redirectAfterPost(){
+		$url_params 		= $this->getRequest()->getParams();
+		$module 			= $url_params['module'];
+		$controller 		= $url_params['controller'];
+		
+		$url = "{$module}/{$controller}/list";
+		if ($this->_redirect_after_post){
+			$this->_redirect($url);
+		}
 		
 	}
 	
