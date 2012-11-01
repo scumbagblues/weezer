@@ -19,6 +19,7 @@ abstract class Weezer_Catalog_Form_Abstract extends Zend_Form{
 		$config_table->labels 			= $catalog_config->label;
 		$config_table->required_fields 	= explode(',',$catalog_config->required_fields);
 		$config_table->columns          = explode(',', $catalog_config->column_fields);
+		$config_table->show_list_fields = explode(',', $catalog_config->show_list_fields);
 		//$config_table->actions          = $catalog_config->actions;
 		
 		return $config_table;

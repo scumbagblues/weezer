@@ -120,4 +120,9 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 		
 	}
 	
+	public function showList(){
+		
+		
+	}
+	
 }
