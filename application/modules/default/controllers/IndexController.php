@@ -3,7 +3,8 @@
 class Default_IndexController extends Weezer_Controller_Base
 {
 
-	protected $_table_user = 'Default_Model_Users'; 
+	protected $_table_user = 'Default_Model_Usuarios'; 
+	protected $_redirect_after_post = TRUE;
 	
     public function init()
     {
@@ -14,7 +15,9 @@ class Default_IndexController extends Weezer_Controller_Base
     {
         // action body
         
-       $this->view->hola = 'hola';
+       //$this->view->hola = 'hola';
+       $this->createList($this->_table_user);
+       $this->_forward('cataloglist','index','default');
        //$this->createForm('add', $this->_table_user);
     }
     
@@ -24,6 +27,7 @@ class Default_IndexController extends Weezer_Controller_Base
 		//modulo - controlador - accion
 	}
     
+	public function cataloglistAction(){}
 	/**
 	 * TODO
 	 * Acciones de ejemplo -- eliminar despues
@@ -35,6 +39,11 @@ class Default_IndexController extends Weezer_Controller_Base
     
     public function editAction(){
     	$this->createForm('edit', $this->_table_user);
+    	$this->_forward('catalogform','index','default');
+    }
+    
+    public function deleteAction(){
+    	$this->deleteRow($this->_table_user);
     	$this->_forward('catalogform','index','default');
     }
 

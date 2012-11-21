@@ -73,7 +73,12 @@ class Weezer_Model_Base extends Zend_Db_Table_Abstract{
     
 	public function getDefaultData()
     {
-	    $data["{$this->_table_prefix}_uid"] = Zend_Auth::getInstance()->getIdentity()->usu_id;
+    	if (is_null(Zend_Auth::getInstance()->getIdentity()->usu_id)){
+    		$id_user = '1';
+    	}else{
+    		$id_user = Zend_Auth::getInstance()->getIdentity()->usu_id;
+    	}
+	    $data["{$this->_table_prefix}_uid"] = $id_user;
 	    $data["{$this->_table_prefix}_udt"] = date('Y-m-d H:i:s');
 	    
 	    return $data;
@@ -96,4 +101,11 @@ class Weezer_Model_Base extends Zend_Db_Table_Abstract{
 		$this->update($data, $where_update);
 	}
 	
+	
+	public function deleteElement($id){
+		 $where_delete = "{$this->_table_prefix}_id = '{$id}'";
+		 $field_delete = array("{$this->_table_prefix}_activo" => '0');
+		 
+		 $this->update($field_delete, $where_delete);
+	}
 }

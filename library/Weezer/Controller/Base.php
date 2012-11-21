@@ -10,7 +10,7 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 	protected $_is_new;
 	protected $_action_form;
 	protected $_form_table;
-	protected $_redirect_after_post = TRUE;
+	protected $_redirect_after_post;
 	
 	public function getFormFields(){
 		
@@ -26,9 +26,7 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 	public function createForm($type,$table,$params = array()){
 		
 		$this->_form_table 	= $table;
-		
 		$model 				= new $this->_form_table ();
-		//var_dump($model);die;
 		$this->setTypeForm($type);
 		//Se pasa la bandera para saber si es tiene que cambiar la forma
 		//para procesar archivos
@@ -37,11 +35,6 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 		}else{
 			$flag_enc_type = FALSE;
 		}
-		
-		if (isset($params['attribs']['redirect'])){
-			$this->_redirect_after_post = $params['attribs']['redirect'];
-		}
-		
 		if ($this->getRequest()->isPost()){
 			$form_data = $this->getRequest()->getPost();
 		}else{
@@ -92,6 +85,14 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 		}
 	}
 	
+	
+	public function deleteRow($table){
+		$id = $this->_getParam('id');
+		$model = new $table();
+		$model->deleteElement($id);
+		$this->redirectAfterPost();
+	}
+	
 	/**
 	 * 
 	 * Determina el tipo de catalogo agregar/editar
@@ -112,17 +113,19 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 		$url_params 		= $this->getRequest()->getParams();
 		$module 			= $url_params['module'];
 		$controller 		= $url_params['controller'];
-		
-		$url = "{$module}/{$controller}/list";
+		$url = "{$module}/{$controller}/";
 		if ($this->_redirect_after_post){
 			$this->_redirect($url);
 		}
-		
 	}
 	
-	public function showList(){
-		
-		
+	/**
+	 * 
+	 * Método que invoca al listado
+	 * @param string $table
+	 */
+	public function createList($table){
+		$list = new Weezer_Catalog_List($table,$this->view);
+		$list->createList();
 	}
-	
 }
