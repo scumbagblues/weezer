@@ -1,0 +1,31 @@
+<?php if ($this->pageCount > 1){ ?>
+	<div class="pagination pagination-centered">
+	<!-- Previous page link -->
+    <?php if (isset($this->previous)){ ?>
+    	<ul>
+    		<li>
+    			<a href="<?= $this->url(array('page' => $this->previous)); ?>"><i class="icon-chevron-left"></i></a>
+    		</li>
+    	</ul>
+    <?php }?>
+ 
+	<!-- Numbered page links -->
+    <?php foreach ($this->pagesInRange as $page){ ?>
+    	<ul>
+    		<li <?php if ($page == $this->current){ ?>class="active" <?php }?>>
+    			<a href="<?= $this->url(array('page' => $page)); ?>"><?php echo $page; ?></a>
+    		</li>
+    	</ul>
+    <?php } ?>
+ 
+	<!-- Next page link -->
+    <?php if (isset($this->next)){ ?>
+  		<ul>
+    		<li>
+    			<a href="<?= $this->url(array('page' => $this->next)); ?>"><i class="icon-chevron-right"></i></a>
+    		</li>
+    	</ul>
+  		
+    <?php } ?>
+	</div>
+<?php } ?>

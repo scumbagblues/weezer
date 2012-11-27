@@ -9,10 +9,16 @@ class Weezer_Catalog_List{
 	
 	protected $_table;
 	protected $_view;
+	protected $_pagination;
 	
-	public function __construct($table = null,$view = null){
+	
+	public function __construct($table = null,$view = null,$options = NULL){
 		$this->_table = $table;
 		$this->_view  = $view;
+		
+		if (isset($options['pagination'])) {
+			$this->_pagination = $options['pagination'];
+		}
 	}
 	
 	/**
@@ -21,11 +27,12 @@ class Weezer_Catalog_List{
 	 */
 	public function createList(){
 		$table_name			= Weezer_Catalog_Form_Abstract::getTableData($this->_table);
+		//FIXME No esta obteniendo todas las configuraciones
 		$catalog_config 	= Weezer_Catalog_Form_Abstract::getCatalogConfig($table_name->name);
 		$labels 			= $catalog_config->labels->toArray();
 		$list_header_fields = $catalog_config->show_list_fields;
 		$actions			= $catalog_config->actions;
-	
+
 		if (array_key_exists('add', $actions)){
 			$url_action = $this->getUrlAction();
 			$add_action = new stdClass();
@@ -39,8 +46,11 @@ class Weezer_Catalog_List{
 		$header 	= $this->_getHeaders($labels, $list_header_fields,$actions);
 		$content	= $this->_getContent($this->_table,$list_header_fields,$actions);
 		
+		$pagination_list = $this->_pagination ? TRUE: FALSE;
+		
 		$options    = array('header' => $header
 							,'content' => $content
+							,'pagination' => $pagination_list
 							);
 		
 							
@@ -100,7 +110,7 @@ class Weezer_Catalog_List{
 				}
 			}$cont++;
 		}
-		
+	
 		return $content_grid;
 	}
 	
@@ -117,17 +127,16 @@ class Weezer_Catalog_List{
 		$html_actions = '<div class="btn-toolbar">
   							<div class="btn-group">';
 		$row_id = $data[$table_prefix->prefix . '_id'];
-		//foreach ($actions as $key => $value){
-			if ($actions['edit']){
-				//HTML de edit
-				$html_actions .= "<a title='Editar' class='btn btn-inverse' href='{$url_action}/edit/id/{$row_id}'><i class='icon-pencil icon-white'></i></a>";
-			}
-			if ($actions['delete']){
-				//HTML de delete
-				$html_actions .= "<a title='Eliminar' class='btn btn-inverse' href='javascript: weezer.deleteaction(\"{$url_action}/delete/id/{$row_id}\")'><i class='icon-trash icon-white'></i></a>";
-			}
-		//}
 		
+		if ($actions['edit']){
+			//HTML de edit
+			$html_actions .= "<a title='Editar' class='btn btn-inverse' href='{$url_action}/edit/id/{$row_id}'><i class='icon-pencil icon-white'></i></a>";
+		}
+		if ($actions['delete']){
+			//HTML de delete
+			$html_actions .= "<a title='Eliminar' class='btn btn-inverse' href='javascript: weezer.deleteaction(\"{$url_action}/delete/id/{$row_id}\")'><i class='icon-trash icon-white'></i></a>";
+		}
+	
 		$html_actions .= "</div></div>";
 		
 		return $html_actions;

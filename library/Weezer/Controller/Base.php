@@ -124,8 +124,8 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 	 * Método que invoca al listado
 	 * @param string $table
 	 */
-	public function createList($table){
-		$list = new Weezer_Catalog_List($table,$this->view);
+	public function createList($table,$options = array()){
+		$list = new Weezer_Catalog_List($table,$this->view,$options);
 		$list->createList();
 	}
 }

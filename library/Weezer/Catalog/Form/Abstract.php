@@ -8,7 +8,7 @@
 
 abstract class Weezer_Catalog_Form_Abstract extends Zend_Form{
 	
-	public static function getCatalogConfig($table_config_name,$config_file = 'config.ini'){
+	public function getCatalogConfig($table_config_name,$config_file = 'config.ini'){
 		
 		$config_table	= new stdClass();
 		$catalog_config = new Zend_Config_Ini(APPLICATION_PATH . '/configs/catalogs/' . $config_file, $table_config_name);

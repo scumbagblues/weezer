@@ -80,7 +80,6 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
     			
     			if($info_field){
     				$element_object = $this->_createFormField ( $info_field );
-    
     				//Validación de campos obligatorios
     				if (in_array($element_object->name, $required_fields)){
     					$options['required'] = TRUE;

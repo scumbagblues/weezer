@@ -17,6 +17,10 @@ class Weezer_Form_Element_Grid extends Zend_Form_Element{
 	public function setContent($content){
 		$this->options['content'] = $content;
 	}
+	
+	public function setPagination($pagination){
+		$this->options['pagination'] = $pagination;
+	}
 	/*
 	public function setForm(Zend_Form $form){
 		$this->options['form'] = $form;

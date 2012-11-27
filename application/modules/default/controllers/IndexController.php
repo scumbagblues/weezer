@@ -13,10 +13,9 @@ class Default_IndexController extends Weezer_Controller_Base
 
     public function indexAction()
     {
-        // action body
-        
-       //$this->view->hola = 'hola';
-       $this->createList($this->_table_user);
+       //opciones para el listado
+       $options = array('pagination' => TRUE);
+       $this->createList($this->_table_user,$options);
        $this->_forward('cataloglist','index','default');
        //$this->createForm('add', $this->_table_user);
     }
