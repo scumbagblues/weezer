@@ -25,44 +25,44 @@
  */
 return array(
     // Zend_Validate_Alnum
-    "Invalid type given, value should be float, string, or integer" => "El tipo especificado no es válido, el valor debe ser de tipo float, una cadena de texto o entero",
-    "'%value%' contains characters which are non alphabetic and no digits" => "'%value%' contiene caracteres que no son alfabéticos ni dígitos",
+    "Invalid type given, value should be float, string, or integer" => "El tipo especificado no es vÃ¡lido, el valor debe ser de tipo float, una cadena de texto o entero",
+    "'%value%' contains characters which are non alphabetic and no digits" => "'%value%' contiene caracteres que no son alfabÃ¡ticos ni dÃ­gitos",
     "'%value%' is an empty string" => "'%value%' es una cadena de texto vacia",
 
     // Zend_Validate_Alpha
-    "Invalid type given, value should be a string" => "El tipo especificado no es válido, el valor debe ser una cadena de texto",
-    "'%value%' contains non alphabetic characters" => "'%value%' contiene caracteres no alfabéticos",
+    "Invalid type given, value should be a string" => "El tipo especificado no es vÃ¡lido, el valor debe ser una cadena de texto",
+    "'%value%' contains non alphabetic characters" => "'%value%' contiene caracteres no alfabÃ¡ticos",
     "'%value%' is an empty string" => "'%value%' es una cadena de texto vacia",
 
     // Zend_Validate_Barcode
-    "'%value%' failed checksum validation" => "'%value%' Fallo la validación de  checksum",
-    "'%value%' contains invalid characters" => "'%value%' contiene caracteres no válidos",
+    "'%value%' failed checksum validation" => "'%value%' Fallo la validaciÃ³n de  checksum",
+    "'%value%' contains invalid characters" => "'%value%' contiene caracteres no vÃ¡lidos",
     "'%value%' should have a length of %length% characters" => "'%value%' debe tener una longitud de %length% caracteres",
-    "Invalid type given, value should be string" => "El tipo especificado no es válido, el valor debe ser una cadena de texto",
+    "Invalid type given, value should be string" => "El tipo especificado no es vÃ¡lido, el valor debe ser una cadena de texto",
 
     // Zend_Validate_Between
-    "'%value%' is not between '%min%' and '%max%', inclusively" => "'%value%' no está incluido entre '%min%' y '%max%'",
-    "'%value%' is not strictly between '%min%' and '%max%'" => "'%value%' no está exactamente entre '%min%' y '%max%'",
+    "'%value%' is not between '%min%' and '%max%', inclusively" => "'%value%' no estÃ¡ incluido entre '%min%' y '%max%'",
+    "'%value%' is not strictly between '%min%' and '%max%'" => "'%value%' no estÃ¡ exactamente entre '%min%' y '%max%'",
 
     // Zend_Validate_Callback
-    "'%value%' is not valid" => "'%value%' no es válido",
-    "Failure within the callback, exception returned" => "Falló dentro de la llamada de retorno, ha devuelto una excepción",
+    "'%value%' is not valid" => "'%value%' no es vÃ¡lido",
+    "Failure within the callback, exception returned" => "FallÃ³ dentro de la llamada de retorno, ha devuelto una excepciÃ³n",
 
     // Zend_Validate_Ccnum
-    "'%value%' must contain between 13 and 19 digits" => "'%value%' debe contener entre 13 y 19 dígitos",
-    "Luhn algorithm (mod-10 checksum) failed on '%value%'" => "El algoritmo de Luhn (checksum del módulo 10) fallo en '%value%'",
+    "'%value%' must contain between 13 and 19 digits" => "'%value%' debe contener entre 13 y 19 dÃ­gitos",
+    "Luhn algorithm (mod-10 checksum) failed on '%value%'" => "El algoritmo de Luhn (checksum del mÃ³dulo 10) fallo en '%value%'",
 
     // Zend_Validate_CreditCard
-    "Luhn algorithm (mod-10 checksum) failed on '%value%'" => "El algoritmo de Luhn (checksum del módulo 10) fallo en '%value%'",
-    "'%value%' must contain only digits" => "'%value%' debe contener solo dígitos",
-    "Invalid type given, value should be a string" => "El tipo especificado no es válido, el valor debe ser una cadena de texto",
-    "'%value%' contains an invalid amount of digits" => "'%value%' contiene una cantidad invÃ¡lida de dígitos",
-    "'%value%' is not from an allowed institute" => "'%value%' no es de una institución autorizada",
-    "Validation of '%value%' has been failed by the service" => "La validación de '%value%' fallo por causa del servicio",
-    "The service returned a failure while validating '%value%'" => "El servicio devolvió un fallo durante la validación de '%value%'",
+    "Luhn algorithm (mod-10 checksum) failed on '%value%'" => "El algoritmo de Luhn (checksum del mÃ³dulo 10) fallo en '%value%'",
+    "'%value%' must contain only digits" => "'%value%' debe contener solo dÃ­gitos",
+    "Invalid type given, value should be a string" => "El tipo especificado no es vÃ¡lido, el valor debe ser una cadena de texto",
+    "'%value%' contains an invalid amount of digits" => "'%value%' contiene una cantidad invÃ¡lida de dÃ­gitos",
+    "'%value%' is not from an allowed institute" => "'%value%' no es de una instituciÃ³n autorizada",
+    "Validation of '%value%' has been failed by the service" => "La validaciÃ³n de '%value%' fallo por causa del servicio",
+    "The service returned a failure while validating '%value%'" => "El servicio devolviÃ³ un fallo durante la validaciÃ³n de '%value%'",
 
     // Zend_Validate_Date
-    "Invalid type given, value should be string, integer, array or Zend_Date" => "El tipo especificado no es válido, el valor debe ser una cadena de texto, entero, array o un objeto Zend_Date",
+    "Invalid type given, value should be string, integer, array or Zend_Date" => "El tipo especificado no es vÃ¡lido, el valor debe ser una cadena de texto, entero, array o un objeto Zend_Date",
     "'%value%' does not appear to be a valid date" => "'%value%' no parece ser una fecha vÃ¡lida",
     "'%value%' does not fit the date format '%format%'" => "'%value%' no se ajusta al formato de fecha '%format%'",
 
@@ -71,24 +71,24 @@ return array(
     "A record matching %value% was found" => "Se encontro un registro coincidente con %value%",
 
     // Zend_Validate_Digits
-    "Invalid type given, value should be string, integer or float" => "El tipo especificado no es válido, el valor debe ser una cadena de texto, entero o float",
-    "'%value%' contains characters which are not digits; but only digits are allowed" => "'%value%' contiene caracteres que no son dígitos, solo se permiten dígitos",
+    "Invalid type given, value should be string, integer or float" => "El tipo especificado no es vÃ¡lido, el valor debe ser una cadena de texto, entero o float",
+    "'%value%' contains characters which are not digits; but only digits are allowed" => "'%value%' contiene caracteres que no son dÃ­gitos, solo se permiten dÃ­gitos",
     "'%value%' is an empty string" => "'%value%' es una cadena vacÃ­a",
 
     // Zend_Validate_EmailAddress
-    "Invalid type given, value should be a string" => "El tipo especificado no es válido, el valor debe ser una cadena de texto",
-    "'%value%' is no valid email address in the basic format local-part@hostname" => "'%value%' no es una dirección de correo electrónico válido en el formato local-part@hostname",
-    "'%hostname%' is no valid hostname for email address '%value%'" => "'%hostname%' no es un nombre de host válido para la dirección de correo electrónico '%value%'",
-    "'%hostname%' does not appear to have a valid MX record for the email address '%value%'" => "'%hostname%' no parece tener un registro MX válido para la dirección de correo electrónico '%value%'",
-    "'%hostname%' is not in a routable network segment. The email address '%value%' should not be resolved from public network." => "'%hostname%' no esta en un segmento de red ruteable. La dirección de correo electrónico '%value%' no se debe poder resolver desde una red pÃºblica.",
+    "Invalid type given, value should be a string" => "El tipo especificado no es vÃ¡lido, el valor debe ser una cadena de texto",
+    "'%value%' is no valid email address in the basic format local-part@hostname" => "'%value%' no es una direcciÃ³n de correo electrÃ³nico vÃ¡lido en el formato local-part@hostname",
+    "'%hostname%' is no valid hostname for email address '%value%'" => "'%hostname%' no es un nombre de host vÃ¡lido para la direcciÃ³n de correo electrÃ³nico '%value%'",
+    "'%hostname%' does not appear to have a valid MX record for the email address '%value%'" => "'%hostname%' no parece tener un registro MX vÃ¡lido para la direcciÃ³n de correo electrÃ³nico '%value%'",
+    "'%hostname%' is not in a routable network segment. The email address '%value%' should not be resolved from public network." => "'%hostname%' no esta en un segmento de red ruteable. La direcciÃ³n de correo electrÃ³nico '%value%' no se debe poder resolver desde una red pÃºblica.",
     "'%localPart%' can not be matched against dot-atom format" => "'%localPart%' no es igual al formato dot-atom",
     "'%localPart%' can not be matched against quoted-string format" => "'%localPart%' no es igual al formato quoted-string",
-    "'%localPart%' is no valid local part for email address '%value%'" => "'%localPart%' no es una parte local vÃ¡lida para la dirección de correo electrónico '%value%'",
+    "'%localPart%' is no valid local part for email address '%value%'" => "'%localPart%' no es una parte local vÃ¡lida para la direcciÃ³n de correo electrÃ³nico '%value%'",
     "'%value%' exceeds the allowed length" => "'%value%' excede la longitud permitida",
 
     // Zend_Validate_File_Count
-    "Too many files, maximum '%max%' are allowed but '%count%' are given" => "Demasiados archivos, se permiten un máximo de '%max%' pero se han especificado '%count%'",
-    "Too few files, minimum '%min%' are expected but '%count%' are given" => "Muy pocos archivos, se esperaba un mínimo de '%min%' pero sólo se han especificado '%count%'",
+    "Too many files, maximum '%max%' are allowed but '%count%' are given" => "Demasiados archivos, se permiten un mÃ¡ximo de '%max%' pero se han especificado '%count%'",
+    "Too few files, minimum '%min%' are expected but '%count%' are given" => "Muy pocos archivos, se esperaba un mÃ­nimo de '%min%' pero sÃ³lo se han especificado '%count%'",
 
     // Zend_Validate_File_Crc32
     "File '%value%' does not match the given crc32 hashes" => "El CRC32 del archivo '%value%' es incorrecto",
@@ -96,7 +96,7 @@ return array(
     "File '%value%' could not be found" => "No se ha podido encontrar el archivo '%value%'",
 
     // Zend_Validate_File_ExcludeExtension
-    "File '%value%' has a false extension" => "El archivo '%value%' tiene una extensión incorrecta",
+    "File '%value%' has a false extension" => "El archivo '%value%' tiene una extensiÃ³n incorrecta",
     "File '%value%' could not be found" => "No se ha podido encontrar el archivo '%value%'",
 
     // Zend_Validate_File_ExcludeMimeType
@@ -108,29 +108,29 @@ return array(
     "File '%value%' does not exist" => "El archivo '%value%' no existe",
 
     // Zend_Validate_File_Extension
-    "File '%value%' has a false extension" => "El archivo '%value%' tiene una extensión incorrecta",
+    "File '%value%' has a false extension" => "El archivo '%value%' tiene una extensiÃ³n incorrecta",
     "File '%value%' could not be found" => "No se ha podido encontrar el archivo '%value%'",
 
     // Zend_Validate_File_FilesSize
-    "All files in sum should have a maximum size of '%max%' but '%size%' were detected" => "Todos los archivos deberán tener un tamaño máximo de '%max%' pero tiene un tamaño de '%size%'",
-    "All files in sum should have a minimum size of '%min%' but '%size%' were detected" => "Todos los archivos deberán tener un tamaño mínimo de '%min%' pero tiene un tamaño de '%size%'",
+    "All files in sum should have a maximum size of '%max%' but '%size%' were detected" => "Todos los archivos deberÃ¡n tener un tamaÃ±o mÃ¡ximo de '%max%' pero tiene un tamaÃ±o de '%size%'",
+    "All files in sum should have a minimum size of '%min%' but '%size%' were detected" => "Todos los archivos deberÃ¡n tener un tamaÃ±o mÃ­nimo de '%min%' pero tiene un tamaÃ±o de '%size%'",
     "One or more files can not be read" => "Uno o mÃ¡s archivos no se pueden leer",
 
     // Zend_Validate_File_Hash
-    "File '%value%' does not match the given hashes" => "El archivo '%value%' no se corresponde con los códigos hash especificados",
-    "A hash could not be evaluated for the given file" => "No se ha podido evaluar ningÃºn código hash para el archivo especificado",
+    "File '%value%' does not match the given hashes" => "El archivo '%value%' no se corresponde con los cÃ³digos hash especificados",
+    "A hash could not be evaluated for the given file" => "No se ha podido evaluar ningÃºn cÃ³digo hash para el archivo especificado",
     "File '%value%' could not be found" => "No se ha podido encontrar el archivo '%value%'",
 
     // Zend_Validate_File_ImageSize
-    "Maximum allowed width for image '%value%' should be '%maxwidth%' but '%width%' detected" => "El ancho máxima para la imagen '%value%' deberá ser '%maxwidth%' pero es de '%width%'",
-    "Minimum expected width for image '%value%' should be '%minwidth%' but '%width%' detected" => "El ancho mínima para la imagen '%value%' deberá ser '%minwidth%' pero es de '%width%'",
-    "Maximum allowed height for image '%value%' should be '%maxheight%' but '%height%' detected" => "La altura máxima para la imagen '%value%' deberá ser '%maxheight%' pero es de '%height%'",
-    "Minimum expected height for image '%value%' should be '%minheight%' but '%height%' detected" => "La altura mínima para la imagen '%value%' deberá ser '%minheight%' pero es de '%height%'",
-    "The size of image '%value%' could not be detected" => "No se ha podido determinar el tamaño de la imagen '%value%'",
+    "Maximum allowed width for image '%value%' should be '%maxwidth%' but '%width%' detected" => "El ancho mÃ¡xima para la imagen '%value%' deberÃ¡ ser '%maxwidth%' pero es de '%width%'",
+    "Minimum expected width for image '%value%' should be '%minwidth%' but '%width%' detected" => "El ancho mÃ­nima para la imagen '%value%' deberÃ¡ ser '%minwidth%' pero es de '%width%'",
+    "Maximum allowed height for image '%value%' should be '%maxheight%' but '%height%' detected" => "La altura mÃ¡xima para la imagen '%value%' deberÃ¡ ser '%maxheight%' pero es de '%height%'",
+    "Minimum expected height for image '%value%' should be '%minheight%' but '%height%' detected" => "La altura mÃ­nima para la imagen '%value%' deberÃ¡ ser '%minheight%' pero es de '%height%'",
+    "The size of image '%value%' could not be detected" => "No se ha podido determinar el tamaÃ±o de la imagen '%value%'",
     "File '%value%' can not be read" => "El archivo '%value%' no se puede leer",
 
     // Zend_Validate_File_IsCompressed
-    "File '%value%' is not compressed, '%type%' detected" => "El archivo '%value%' no está comprimido, '%type%' detectado",
+    "File '%value%' is not compressed, '%type%' detected" => "El archivo '%value%' no estÃ¡ comprimido, '%type%' detectado",
     "The mimetype of file '%value%' could not be detected" => "No se ha podido determinar el tipo MIME del archivo '%value%'",
     "File '%value%' can not be read" => "El archivo '%value%' no se puede leer",
 
@@ -158,18 +158,18 @@ return array(
     "File '%value%' could not be found" => "No se ha podido encontrar el archivo '%value%'",
 
     // Zend_Validate_File_Size
-    "Maximum allowed size for file '%value%' is '%max%' but '%size%' detected" => "El tamaño máximo permitido para el archivo '%value%' es '%max%' pero se ha detectado un tamaño de '%size%'",
-    "Minimum expected size for file '%value%' is '%min%' but '%size%' detected" => "El tamaño mínimo permitido para el archivo '%value%' es '%min%' pero se ha detectado un tamaño de '%size%'",
+    "Maximum allowed size for file '%value%' is '%max%' but '%size%' detected" => "El tamaÃ±o mÃ¡ximo permitido para el archivo '%value%' es '%max%' pero se ha detectado un tamaÃ±o de '%size%'",
+    "Minimum expected size for file '%value%' is '%min%' but '%size%' detected" => "El tamaÃ±o mÃ­nimo permitido para el archivo '%value%' es '%min%' pero se ha detectado un tamaÃ±o de '%size%'",
     "File '%value%' could not be found" => "No se ha podido encontrar el archivo '%value%'",
 
     // Zend_Validate_File_Upload
-    "File '%value%' exceeds the defined ini size" => "El tamaño del archivo '%value%' excede el valor definido en el ini",
-    "File '%value%' exceeds the defined form size" => "El archivo '%value%' excede el tamaño definido en el formulario",
-    "File '%value%' was only partially uploaded" => "El archivo '%value%' ha sido sólo parcialmente subido",
+    "File '%value%' exceeds the defined ini size" => "El tamaÃ±o del archivo '%value%' excede el valor definido en el ini",
+    "File '%value%' exceeds the defined form size" => "El archivo '%value%' excede el tamaÃ±o definido en el formulario",
+    "File '%value%' was only partially uploaded" => "El archivo '%value%' ha sido sÃ³lo parcialmente subido",
     "File '%value%' was not uploaded" => "El archivo '%value%' no ha sido subido",
     "No temporary directory was found for file '%value%'" => "No se ha encontrado el directorio temporal para el archivo '%value%'",
     "File '%value%' can't be written" => "No se puede escribir en el archivo '%value%'",
-    "A PHP extension returned an error while uploading the file '%value%'" => "Una extensión PHP devolvia un error mientras se subía el archivo '%value%'",
+    "A PHP extension returned an error while uploading the file '%value%'" => "Una extensiÃ³n PHP devolvia un error mientras se subÃ­a el archivo '%value%'",
     "File '%value%' was illegally uploaded. This could be a possible attack" => "El archivo '%value%' ha sido subido ilegalmente, lo cual podrÃ­Â­a ser un ataque",
     "File '%value%' was not found" => "Archivo '%value%' no encontrado",
     "Unknown error while uploading file '%value%'" => "error desconocido al intentar subir el archivo '%value%'",
@@ -180,32 +180,32 @@ return array(
     "File '%value%' could not be found" => "No se ha podido encontrar el archivo '%value%'",
 
     // Zend_Validate_Float
-    "Invalid type given, value should be float, string, or integer" => "El tipo especificado no es válido, el valor deberá ser de tipo float, una cadena de texto o un entero",
+    "Invalid type given, value should be float, string, or integer" => "El tipo especificado no es vÃ¡lido, el valor deberÃ¡ ser de tipo float, una cadena de texto o un entero",
     "'%value%' does not appear to be a float" => "'%value%' no parece ser un numero",
 
 // Zend_Validate_GreaterThan
     "'%value%' is not greater than '%min%'" => "'%value%' no es mayor que '%min%'",
 
     // Zend_Validate_Hex
-    "Invalid type given, value should be a string" => "El tipo especificado es incorrecto, el valor deberá ser una cadena de texto",
-    "'%value%' has not only hexadecimal digit characters" => "'%value%' no consta únicamente de dígitos y caracteres hexadecimales",
+    "Invalid type given, value should be a string" => "El tipo especificado es incorrecto, el valor deberÃ¡ ser una cadena de texto",
+    "'%value%' has not only hexadecimal digit characters" => "'%value%' no consta Ãºnicamente de dÃ­gitos y caracteres hexadecimales",
 
     // Zend_Validate_Hostname
-    "Invalid type given, value should be a string" => "El tipo especificado es incorrecto, el valor deberá ser una cadena de texto",
-    "'%value%' appears to be an IP address, but IP addresses are not allowed" => "'%value%' parece una dirección IP, pero estas no están permitidas",
-    "'%value%' appears to be a DNS hostname but cannot match TLD against known list" => "'%value%' parece ser un nombre de dominio DNS pero el TLD no es válido",
-    "'%value%' appears to be a DNS hostname but contains a dash in an invalid position" => "'%value%' parece ser un nombre de dominio DNS pero contiene una barra en una posición inválida",
+    "Invalid type given, value should be a string" => "El tipo especificado es incorrecto, el valor deberÃ¡ ser una cadena de texto",
+    "'%value%' appears to be an IP address, but IP addresses are not allowed" => "'%value%' parece una direcciÃ³n IP, pero estas no estÃ¡n permitidas",
+    "'%value%' appears to be a DNS hostname but cannot match TLD against known list" => "'%value%' parece ser un nombre de dominio DNS pero el TLD no es vÃ¡lido",
+    "'%value%' appears to be a DNS hostname but contains a dash in an invalid position" => "'%value%' parece ser un nombre de dominio DNS pero contiene una barra en una posiciÃ³n invÃ¡lida",
     "'%value%' appears to be a DNS hostname but cannot match against hostname schema for TLD '%tld%'" => "'%value%' parece ser un nombre de dominio DNS pero su formato no se corresponde con el correcto para el TLD '%tld%'",
     "'%value%' appears to be a DNS hostname but cannot extract TLD part" => "'%value%' parece ser un nombre de dominio DNS pero no se puede extraer la parte del TLD",
     "'%value%' does not match the expected structure for a DNS hostname" => "'%value%' no se corresponde con la estructura esperada para un nombre de dominio DNS",
-    "'%value%' does not appear to be a valid local network name" => "'%value%' no parece ser un nombre de area local válido",
+    "'%value%' does not appear to be a valid local network name" => "'%value%' no parece ser un nombre de area local vÃ¡lido",
     "'%value%' appears to be a local network name but local network names are not allowed" => "'%value%' parece ser un nombre de area local pero no se permiten nombres de area local",
-    "'%value%' appears to be a DNS hostname but the given punycode notation cannot be decoded" => "'%value%' parece ser un nombre de dominio DNS pero no se puede decodificar la notación de punycode",
+    "'%value%' appears to be a DNS hostname but the given punycode notation cannot be decoded" => "'%value%' parece ser un nombre de dominio DNS pero no se puede decodificar la notaciÃ³n de punycode",
 
     // Zend_Validate_Iban
-    "Unknown country within the IBAN '%value%'" => "País desconocido dentro del IBAN '%value%'",
+    "Unknown country within the IBAN '%value%'" => "PaÃ­s desconocido dentro del IBAN '%value%'",
     "'%value%' has a false IBAN format" => "'%value%' tiene un formato falso de IBAN",
-    "'%value%' has failed the IBAN check" => "La prueba de validación de IBAN de '%value%' ha fallado",
+    "'%value%' has failed the IBAN check" => "La prueba de validaciÃ³n de IBAN de '%value%' ha fallado",
 
     // Zend_Validate_Identical
     "The two given tokens do not match" => "Las dos muestras especificados no concuerdan",
@@ -215,51 +215,51 @@ return array(
     "'%value%' was not found in the haystack" => "No se ha encontrado '%value%' en el argumento especificado",
 
     // Zend_Validate_Int
-    "Invalid type given, value should be string or integer" => "El tipo especificado es inválido, el valor deberá ser una cadena de texto o un entero",
+    "Invalid type given, value should be string or integer" => "El tipo especificado es invÃ¡lido, el valor deberÃ¡ ser una cadena de texto o un entero",
     "'%value%' does not appear to be an integer" => "'%value%' no parece ser un entero",
 
     // Zend_Validate_Ip
-    "Invalid type given, value should be a string" => "El tipo especificado es incorrecto, el valor deberá ser una cadena de texto",
-    "'%value%' does not appear to be a valid IP address" => "'%value%' no parece ser una dirección IP vÃ¡lida",
+    "Invalid type given, value should be a string" => "El tipo especificado es incorrecto, el valor deberÃ¡ ser una cadena de texto",
+    "'%value%' does not appear to be a valid IP address" => "'%value%' no parece ser una direcciÃ³n IP vÃ¡lida",
 
     // Zend_Validate_Isbn
-    "Invalid type given, value should be string or integer" => "El tipo especificado es inválido, el valor deberá ser una cadena de texto o un entero",
-    "'%value%' is not a valid ISBN number" => "El nÃºmero ISBN especificado ('%value%') no es válido",
+    "Invalid type given, value should be string or integer" => "El tipo especificado es invÃ¡lido, el valor deberÃ¡ ser una cadena de texto o un entero",
+    "'%value%' is not a valid ISBN number" => "El nÃºmero ISBN especificado ('%value%') no es vÃ¡lido",
 
     // Zend_Validate_LessThan
     "'%value%' is not less than '%max%'" => "'%value%' no es menor que '%max%'",
 
     // Zend_Validate_NotEmpty
-    "Invalid type given, value should be float, string, array, boolean or integer" => "El tipo especificado es inválido, el valor deberá ser un float, una cadena de texto, un array, un boolean o un entero",
+    "Invalid type given, value should be float, string, array, boolean or integer" => "El tipo especificado es invÃ¡lido, el valor deberÃ¡ ser un float, una cadena de texto, un array, un boolean o un entero",
     "Value is required and can't be empty" => "Se requiere un valor y este no puede estar vacio",
 
     // Zend_Validate_PostCode
-    "Invalid type given. The value should be a string or a integer" => "El tipo especificado es incorrecto, el valor deberá ser una cadena de texto",
-    "'%value%' does not appear to be a postal code" => "'%value%' no parece ser un código postal",
+    "Invalid type given. The value should be a string or a integer" => "El tipo especificado es incorrecto, el valor deberÃ¡ ser una cadena de texto",
+    "'%value%' does not appear to be a postal code" => "'%value%' no parece ser un cÃ³digo postal",
 
     // Zend_Validate_Regex
-    "Invalid type given, value should be string, integer or float" => "El tipo especificado es incorrecto, el valor deberá ser de tipo float, una cadena de texto o un entero",
-    "'%value%' does not match against pattern '%pattern%'" => "'%value%' no concuerda con el patrón '%pattern%' especificado",
-    "There was an internal error while using the pattern '%pattern%'" => "Se ha producido un error interno al usar el patrón '%pattern%' especificado",
+    "Invalid type given, value should be string, integer or float" => "El tipo especificado es incorrecto, el valor deberÃ¡ ser de tipo float, una cadena de texto o un entero",
+    "'%value%' does not match against pattern '%pattern%'" => "'%value%' no concuerda con el patrÃ³n '%pattern%' especificado",
+    "There was an internal error while using the pattern '%pattern%'" => "Se ha producido un error interno al usar el patrÃ³n '%pattern%' especificado",
 
     // Zend_Validate_Sitemap_Changefreq
-    "'%value%' is not a valid sitemap changefreq" => "'%value%' no es una especificación vÃ¡lida de frecuencia de cambio",
-    "Invalid type given, the value should be a string" => "El tipo especificado es inválido, el valor deberá ser una cadena de texto",
+    "'%value%' is not a valid sitemap changefreq" => "'%value%' no es una especificaciÃ³n vÃ¡lida de frecuencia de cambio",
+    "Invalid type given, the value should be a string" => "El tipo especificado es invÃ¡lido, el valor deberÃ¡ ser una cadena de texto",
 
     // Zend_Validate_Sitemap_Lastmod
-    "'%value%' is not a valid sitemap lastmod" => "'%value%' no es un lastmod de mapa web válido",
-    "Invalid type given, the value should be a string" => "El tipo especificado es inválido, el valor deberá ser una cadena de texto",
+    "'%value%' is not a valid sitemap lastmod" => "'%value%' no es un lastmod de mapa web vÃ¡lido",
+    "Invalid type given, the value should be a string" => "El tipo especificado es invÃ¡lido, el valor deberÃ¡ ser una cadena de texto",
 
     // Zend_Validate_Sitemap_Loc
-    "'%value%' is not a valid sitemap location" => "'%value%' no es una ubicación de mapa web vÃ¡lida",
-    "Invalid type given, the value should be a string" => "El tipo especificado es inválido, el valor deberá ser una cadena de texto",
+    "'%value%' is not a valid sitemap location" => "'%value%' no es una ubicaciÃ³n de mapa web vÃ¡lida",
+    "Invalid type given, the value should be a string" => "El tipo especificado es invÃ¡lido, el valor deberÃ¡ ser una cadena de texto",
 
     // Zend_Validate_Sitemap_Priority
     "'%value%' is not a valid sitemap priority" => "'%value%' no es una prioridad de mapa web vÃ¡lida",
-    "Invalid type given, the value should be a integer, a float or a numeric string" => "El tipo especificado es inválido, el valor deberá ser un entero, un float o una cadena de texto numÃ©rica",
+    "Invalid type given, the value should be a integer, a float or a numeric string" => "El tipo especificado es invÃ¡lido, el valor deberÃ¡ ser un entero, un float o una cadena de texto numÃ©rica",
 
     // Zend_Validate_StringLength
-    "Invalid type given, value should be a string" => "El tipo especificado es incorrecto, el valor deberá ser una cadena de texto",
+    "Invalid type given, value should be a string" => "El tipo especificado es incorrecto, el valor deberÃ¡ ser una cadena de texto",
     "'%value%' is less than %min% characters long" => "'%value%' tiene menos de '%min%' caracteres",
     "'%value%' is more than %max% characters long" => "'%value%' tiene mÃ¡s de '%max%' caracteres",
 );
