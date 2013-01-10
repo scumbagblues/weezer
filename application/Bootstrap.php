@@ -2,6 +2,8 @@
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
+	
+	
 	protected function _initJquery() {
 
 		$view = new Zend_View($this->getOptions());
@@ -18,6 +20,95 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	//$excel_autoloader->pushAutoloader(new Weezer_ExcelAutoloader());
 			
 	}
-
+	
+	//FIXME corregir lo routes para poder obtener el lenguaje a traves la de la URL
+	/*
+	protected function _initRoutes(){
+		$front_controller = Zend_Controller_Front::getInstance();
+		$router = $front_controller->getRouter();
+		$router->removeDefaultRoutes();
+		
+	
+		
+		
+		$router->addRoute(
+			'langmodcontrolleraction',
+			new Zend_Controller_Router_Route('/:lang/:module/:controller/:action',
+	    	  								array('lang' 		=> ':lang',
+										           'module' 	=> 'default',
+										           'controller' => 'index',
+										           'action' 	=> 'index',
+	    	  									   'page'			=> '1'
+									        ),
+	    	  								array('lang' => '[a-z]{2}', 
+	    	  								  		 'page' => '\d+'
+	    	  								  	    )
+	    	)		
+		);
+		
+		$router->addRoute(
+	  		'langcontrolleraction',
+	  		new Zend_Controller_Router_Route('/:lang/:controller/:action',
+									    	  array('lang' => ':lang',
+									    	  		 'controller' => 'index',
+									    	  		 'action' => 'index',
+									    	  		 'page' => '1'
+									    	  ),
+									    	 array('lang' => '[a-z]{2}', 
+	    	  								  		 'page' => '\d+'
+	    	  								  	    )
+	  		)
+		);
+	
+		/*
+		$router->addRoute(
+	  		'langindex',
+	  		new Zend_Controller_Router_Route('/:lang',
+		    	array('lang' 		=> ':lang',
+			           'module' 	=> 'default',
+			           'controller' => 'index',
+			           'action' 	=> 'index',
+		    		   	
+		        ),
+		        
+		        array('lang' => '[a-z]{2}')
+	  		)
+		);
+	
+		$router->addRoute(
+			'mca',
+			new Zend_Controller_Router_Route('/:module/:controller/:action',
+				array('lang' 		=> 'es',
+				  	   'module' 	=> 'default',
+				       'controller' => 'index',
+				       'action' 	=> 'index'
+			    ),
+			    array('lang' => '[a-z]{2}')
+			)
+		);
+		
+		$router->addRoute(
+			'modcontroller',
+			new Zend_Controller_Router_Route('/:module/:controller/',
+				array('lang' 		=> 'es',
+				  	   'module' 	=> 'default',
+				       'controller' => 'index',
+				       'action' 	=> 'index'
+			    ),
+			    array('lang' => '[a-z]{2}')
+			)
+		);
+		
+		$router->addRoute(
+			'mod',
+			new Zend_Controller_Router_Route('/:module',
+				array('lang' 		=> 'es',
+				  	   'module' 	=> 'default',
+				       'controller' => 'index',
+				       'action' 	=> 'index'
+			    ),
+			    array('lang' => '[a-z]{2}')
+			)
+		);*/
+	//}
 }
-

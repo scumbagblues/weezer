@@ -19,14 +19,12 @@ protected $_class_label = 'control-label';
 		if ($element->isRequired ()) {
 			$label .= '*';
 		}
-		//Se obtiene la etiqueta
-		$label .= $element->getLabel ();
-
-		//Si se tiene traducción se aplica
-		if ($translator = $element->getTranslator ()) {
-			$label .= $translator->translate ( $label );
-		}
 		
+		//Si se tiene traducciÃ³n se aplica
+		if ($translator = $element->getTranslator ()) {
+			$label .= $translator->translate ( $element->getLabel ());
+		}
+
 		$label .= ':';
 		//en caso de que no se mande una etiqueta esta quedara vacia
 		if (is_null($element->getLabel())){
