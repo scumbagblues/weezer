@@ -11,6 +11,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
 		$server = $_SERVER['PHP_SELF'];
 		$base_url = substr($server, 0, -(strlen($server) - strpos($server, 'index.php')));
+		
 		$view->jQuery()->enable()
 			->setLocalPath($base_url .'js/jquery/jquery-1.7.1.min.js')
 			->setUiLocalPath($base_url .'js/jquery/jquery-ui-1.8.13.custom.min.js')

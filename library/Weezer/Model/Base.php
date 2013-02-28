@@ -24,7 +24,7 @@ class Weezer_Model_Base extends Zend_Db_Table_Abstract{
 	
 	/**
 	 * 
-	 * Método que obtiene la información de un registro
+	 * Mï¿½todo que obtiene la informaciÃ³n de un registro
 	 * por su ID
 	 * @param unknown_type $param
 	 */
@@ -43,7 +43,7 @@ class Weezer_Model_Base extends Zend_Db_Table_Abstract{
 	
 	/**
 	 * 
-	 * Método para obtener un row de acuerdo a su clausula "where"
+	 * Mï¿½todo para obtener un row de acuerdo a su clausula "where"
 	 * @param unknown_type $where
 	 * @param unknown_type $order
 	 */
@@ -58,12 +58,12 @@ class Weezer_Model_Base extends Zend_Db_Table_Abstract{
     
     /**
      * 
-     * Método para obtener un array de registros
+     * Mï¿½todo para obtener un array de registros
      * @param unknown_type $where
      * @param unknown_type $order
      */
     public function getAll($where=null, $order=null){
-        //devuelve todos los registros de la tabla filtrado y ordenado según los parámetros enviados
+        //devuelve todos los registros de la tabla filtrado y ordenado segï¿½n los parï¿½metros enviados
         return $this->fetchAll($where, $order)->toArray();
     }
     

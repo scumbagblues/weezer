@@ -28,7 +28,7 @@ class Weezer_View_Helper_Gridform extends Zend_View_Helper_Abstract{
 	
 	/**
 	 * 
-	 * Método para obtener los headers de la tabla
+	 * MÃ©todo para obtener los headers de la tabla
 	 * @param array $header_array
 	 */
 	protected function _getGridHeader($header_array){
@@ -44,7 +44,7 @@ class Weezer_View_Helper_Gridform extends Zend_View_Helper_Abstract{
 	
 	/**
 	 * 
-	 * Método para obtener el contenido de la tabla
+	 * MÃ©todo para obtener el contenido de la tabla
 	 * @param array $content_array
 	 * @param bool $pagination
 	 */

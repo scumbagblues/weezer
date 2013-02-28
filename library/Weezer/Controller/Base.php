@@ -18,7 +18,7 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 	
 	/**
 	 * 
-	 * Método para crear la forma ya sea para agregar o editar
+	 * Mï¿½todo para crear la forma ya sea para agregar o editar
 	 * @param string $type   | el tipo de forma agregar = 'add' o editar = 'edit'
 	 * @param string $table  | la tabla de la forma
 	 * @param array  $params | parametros a enviar a la forma hasta el momento recibe: 'decorators','enctype_flag','redirect'
@@ -38,7 +38,7 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 		if ($this->getRequest()->isPost()){
 			$form_data = $this->getRequest()->getPost();
 		}else{
-			//Si es edición
+			//Si es ediciÃ³n
 			if (!$this->_is_new){
 				$db_id = $this->_getParam('id');
 				$form_data = $model->getData($db_id);
@@ -78,7 +78,7 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 				$form->populate($form_data);
 			}
 		}else{
-			//Si es edición
+			//Si es ediciï¿½n
 			if (!$this->_is_new){
 				$form->populate($form_data);
 			}
@@ -121,7 +121,7 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 	
 	/**
 	 * 
-	 * Método que invoca al listado
+	 * Mï¿½todo que invoca al listado
 	 * @param string $table
 	 */
 	public function createList($table,$options = array()){
