@@ -23,7 +23,7 @@ class Weezer_Catalog_List{
 	
 	/**
 	 * 
-	 * Método para generar un listado a partir de una tabla (modelo)
+	 * Mï¿½todo para generar un listado a partir de una tabla (modelo)
 	 */
 	public function createList(){
 		$table_name			= Weezer_Catalog_Form_Abstract::getTableData($this->_table);
@@ -32,16 +32,24 @@ class Weezer_Catalog_List{
 		$labels 			= $catalog_config->labels->toArray();
 		$list_header_fields = $catalog_config->show_list_fields;
 		$actions			= $catalog_config->actions;
-
-		if (array_key_exists('add', $actions)){
-			$url_action = $this->getUrlAction();
-			$add_action = new stdClass();
-			
-			$add_action->list = TRUE;
-			$add_action->name = ucfirst($table_name->name);
-			$add_action->url  = $url_action . DIRECTORY_SEPARATOR . 'add';
-			$this->_view->add = $add_action;
+		if (is_array($actions)){
+			if (array_key_exists('add', $actions)){
+				$url_action = $this->getUrlAction();
+				$add_action = new stdClass();
+				
+				$add_action->list = TRUE;
+				if (is_array($catalog_config->name->toArray())){
+					$catalog_name = $catalog_config->name->toArray();
+					$catalog_name = $catalog_name['plural'];
+				}else{
+					$catalog_name = $table_name->name;
+				}
+				$add_action->name = ucfirst($catalog_name);
+				$add_action->url  = $url_action . DIRECTORY_SEPARATOR . 'add';
+				$this->_view->add = $add_action;
+			}
 		}
+		
 		
 		$header 	= $this->_getHeaders($labels, $list_header_fields,$actions);
 		$content	= $this->_getContent($this->_table,$list_header_fields,$actions);
@@ -57,13 +65,19 @@ class Weezer_Catalog_List{
 							
 		//Se le mandan los parametros requeridos al helper gridform
 		$list = $this->_view->gridform('list',null,null,$options);
-		$this->_view->catalog_name = ucfirst($table_name->name);
+		if (is_array($catalog_config->name->toArray())){
+			$catalog_name = $catalog_config->name->toArray();
+			$catalog_name = $catalog_name['plural'];
+		}else{
+			$catalog_name = $table_name->name;
+		}
+		$this->_view->catalog_name = ucfirst($catalog_name);
 		$this->_view->list = $list;
 	}
 	
 	/**
 	 * 
-	 * Método para obtener las cabeceras del listado
+	 * Mï¿½todo para obtener las cabeceras del listado
 	 * @param array $labels
 	 * @param string $list_show_fields
 	 */
@@ -85,7 +99,7 @@ class Weezer_Catalog_List{
 	
 	/**
 	 * 
-	 * Método para obtener el contenido del listado
+	 * Mï¿½todo para obtener el contenido del listado
 	 * @param string $table
 	 * @param string $show_list_fields
 	 */
@@ -115,7 +129,7 @@ class Weezer_Catalog_List{
 	}
 	
 	/**
-	 * Método para procesar las acciones enviadas y generar su html correspondiente
+	 * Mï¿½todo para procesar las acciones enviadas y generar su html correspondiente
 	 * para las acciones edit & delete
 	 */
 	

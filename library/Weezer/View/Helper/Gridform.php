@@ -34,7 +34,6 @@ class Weezer_View_Helper_Gridform extends Zend_View_Helper_Abstract{
 	protected function _getGridHeader($header_array){
 		$html_header = '<thead>';
 		foreach ($header_array as $key => $header){
-			$header = utf8_encode($header);
 			$html_header .= "<th>{$header}</th>";
 		}
 		$html_header .= '</thead>';

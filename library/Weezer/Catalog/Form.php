@@ -89,7 +89,7 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
     				
     				//Se toman las etiquetas de catalogs.ini
     				if (array_key_exists($campo, $label_fields)){
-    					$options['label'] = utf8_encode($label_fields[$element_object->name]);
+    					$options['label'] = $label_fields[$element_object->name];
     				}else{
     					//Se toma el nombre por default del campo (su nombre en la BD)
     					$options['label'] = $element_object->name;
