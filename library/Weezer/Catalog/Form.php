@@ -11,6 +11,8 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
 	protected $_table_form_name;
 	protected $_edit_form_data;
 	protected $_action_form;
+	protected $_fields_decorators;
+	protected $_field_attribs;
 	protected $_decorators_default 	= array('Composite');
 	protected $_filters_default 		= array('StringTrim','StripTags');
 	
@@ -34,6 +36,15 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
 		$this->_action_form = $action_form;
 	}
 	
+	/**
+	 *
+	 * Metodo que settea la informacion de la forma
+	 * cuando es edicion
+	 * @param unknown_type $form_data
+	 */
+	public function setFormData($form_data){
+		$this->_edit_form_data = $form_data;
+	}
 	
 	/**
 	 * (non-PHPdoc)

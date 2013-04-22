@@ -18,7 +18,7 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 	
 	/**
 	 * 
-	 * M�todo para crear la forma ya sea para agregar o editar
+	 * Metodo para crear la forma ya sea para agregar o editar
 	 * @param string $type   | el tipo de forma agregar = 'add' o editar = 'edit'
 	 * @param string $table  | la tabla de la forma
 	 * @param array  $params | parametros a enviar a la forma hasta el momento recibe: 'decorators','enctype_flag','redirect'
@@ -121,7 +121,7 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 	
 	/**
 	 * 
-	 * M�todo que invoca al listado
+	 * Metodo que invoca al listado
 	 * @param string $table
 	 */
 	public function createList($table,$options = array()){

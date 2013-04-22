@@ -99,7 +99,7 @@ class Weezer_Catalog_List{
 	
 	/**
 	 * 
-	 * M�todo para obtener el contenido del listado
+	 * Metodo para obtener el contenido del listado
 	 * @param string $table
 	 * @param string $show_list_fields
 	 */
