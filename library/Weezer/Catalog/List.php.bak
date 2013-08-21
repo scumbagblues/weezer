@@ -10,8 +10,6 @@ class Weezer_Catalog_List{
 	protected $_table;
 	protected $_view;
 	protected $_pagination;
-	protected $_query;
-	protected $_manual_actions;
 	
 	
 	public function __construct($table = null,$view = null,$options = NULL){
@@ -20,14 +18,6 @@ class Weezer_Catalog_List{
 		
 		if (isset($options['pagination'])) {
 			$this->_pagination = $options['pagination'];
-		}
-		
-		if (isset($options['query'])) {
-			$this->_query = $options['query'];
-		}
-		
-		if (isset($options['actions'])) {
-			$this->_manual_actions = $options['actions'];
 		}
 	}
 	
@@ -41,12 +31,7 @@ class Weezer_Catalog_List{
 		$catalog_config 	= Weezer_Catalog_Form_Abstract::getCatalogConfig($table_name->name);
 		$labels 			= $catalog_config->labels->toArray();
 		$list_header_fields = $catalog_config->show_list_fields;
-		if (!is_null($this->_manual_actions)){
-			$actions 	= $this->_manual_actions;
-		}else{
-			$actions	= $catalog_config->actions;
-		}
-		
+		$actions			= $catalog_config->actions;
 		if (is_array($actions)){
 			if (array_key_exists('add', $actions)){
 				$url_action = $this->getUrlAction();
@@ -92,15 +77,14 @@ class Weezer_Catalog_List{
 	
 	/**
 	 * 
-	 * Metodo para obtener las cabeceras del listado
+	 * M�todo para obtener las cabeceras del listado
 	 * @param array $labels
 	 * @param string $list_show_fields
 	 */
 	protected function _getHeaders($labels,$list_show_fields,$actions = NULL){
 		$headers = array();
 		if (!is_null($actions)){
-			if (array_key_exists('edit', $actions) || array_key_exists('delete', $actions)
-				|| array_key_exists('html', $actions)){
+			if (array_key_exists('edit', $actions) || array_key_exists('delete', $actions)){
 				$labels = array_merge($labels,array('actions' => ''));//Se agrega el <th> de las acciones
 			}
 		}
@@ -124,14 +108,7 @@ class Weezer_Catalog_List{
 		$list_table 	= new $table();
 		$table_prefix	= Weezer_Catalog_Form_Abstract::getTableData($table);
 		$where			= "{$table_prefix->prefix}_activo = '1'";
-		
-		//Si se mando la opcion query no se ejecutara el query por default
-		if (is_null($this->_query)){
-			$data 	= $list_table->getAll($where);
-		}else{
-			$db 	= 	Zend_Db_Table_Abstract::getDefaultAdapter();
-			$data 	=	$db->fetchAll($this->_query);
-		}
+		$data 			= $list_table->getAll($where);
 		
 		$content_grid 	= array();
 		$cont 			= 0;
@@ -143,7 +120,7 @@ class Weezer_Catalog_List{
 			}
 			foreach ($content as $header => $val){
 				if (in_array($header, $show_list_fields) || $header == 'actions'){
-					$content_grid[$cont][$header] = utf8_encode($val);
+					$content_grid[$cont][$header] = $val;
 				}
 			}$cont++;
 		}
@@ -166,21 +143,12 @@ class Weezer_Catalog_List{
 		$row_id = $data[$table_prefix->prefix . '_id'];
 		
 		if ($actions['edit']){
-			//HTML edit
-			$html_actions .= "<a title='Editar' class='btn btn-primary' href='{$url_action}/edit/id/{$row_id}'><i class='icon-pencil icon-white'></i></a>";
+			//HTML de edit
+			$html_actions .= "<a title='Editar' class='btn btn-inverse' href='{$url_action}/edit/id/{$row_id}'><i class='icon-pencil icon-white'></i></a>";
 		}
 		if ($actions['delete']){
-			//HTML delete
-			$html_actions .= "<a title='Eliminar' class='btn btn-primary' href='javascript: weezer.deleteaction(\"{$url_action}/delete/id/{$row_id}\")'><i class='icon-trash icon-white'></i></a>";
-		}
-		//HTML radio
-		
-		if($actions['radio']){
-			//TODO hacer el html del radio
-		}
-		//Otro tipo de accion(es)
-		if ($actions['html']){
-			$html_actions .= str_replace('_ID_', $row_id, $actions['html']);
+			//HTML de delete
+			$html_actions .= "<a title='Eliminar' class='btn btn-inverse' href='javascript: weezer.deleteaction(\"{$url_action}/delete/id/{$row_id}\")'><i class='icon-trash icon-white'></i></a>";
 		}
 	
 		$html_actions .= "</div></div>";

@@ -11,8 +11,6 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 	protected $_action_form;
 	protected $_form_table;
 	protected $_redirect_after_post;
-	protected $_label_submit;
-
 	
 	public function getFormFields(){
 		
@@ -30,7 +28,6 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 		$this->_form_table 	= $table;
 		$model 				= new $this->_form_table ();
 		$this->setTypeForm($type);
-		$form_data = '';
 		//Se pasa la bandera para saber si es tiene que cambiar la forma
 		//para procesar archivos
 		if (isset($params['attribs']['enctype_flag'])){
@@ -46,12 +43,6 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 				$db_id = $this->_getParam('id');
 				$form_data = $model->getData($db_id);
 			}
-		}
-		
-		if (isset($params['redirect'])){
-			$redirect_array = $params['redirect'];
-		}else{
-			$redirect_array = array();
 		}
 		
 		$form_params = array(
@@ -81,13 +72,8 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 					$id = $this->_getParam('id');
 					$model->updateElements($form_data,$id);
 				}
-				if ($model->postSave($form_data)){
-					//Se redirige en caso de asi indicarlo
-					$this->redirectAfterPost($redirect_array);
-				}else{
-					
-				}
-				
+				//Se redirige en caso de asi indicarlo
+				$this->redirectAfterPost();
 			}else{
 				$form->populate($form_data);
 			}
@@ -123,20 +109,11 @@ class Weezer_Controller_Base extends Zend_Controller_Action{
 		}
 	}
 	
-	public function redirectAfterPost($params = array()){
-		
-		if (!empty($params)){
-			$module 	= $params['module'];
-			$controller = $params['controller'];
-			$action 	= $params['action'];
-		}else{
-			$url_params 		= $this->getRequest()->getParams();
-			$module 			= $url_params['module'];
-			$controller 		= $url_params['controller'];
-		}
-		
-		$url = "{$module}/{$controller}/$action";
-
+	public function redirectAfterPost(){
+		$url_params 		= $this->getRequest()->getParams();
+		$module 			= $url_params['module'];
+		$controller 		= $url_params['controller'];
+		$url = "{$module}/{$controller}/";
 		if ($this->_redirect_after_post){
 			$this->_redirect($url);
 		}

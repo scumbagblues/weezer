@@ -88,15 +88,7 @@ class Weezer_Model_Base extends Zend_Db_Table_Abstract{
 	    //TODO insertar datos
 	    //TODO crear log
 	    $data = array_merge($data, $this->getDefaultData());
-	    $id = $this->insert($data);
-	  	//Si se inserto correctamente la info
-	  	//se devuelve y se adjunta su nuevo id
-	    if ($id){
-	    	$data = array_merge($data,array("{$this->_table_prefix}_id" => $id));
-	    }
-	    
-	    return $data;
-	    
+	    $this->insert($data);
 	}
 	
 	public function updateElements($data,$id = null,$where = null){

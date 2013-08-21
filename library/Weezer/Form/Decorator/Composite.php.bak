@@ -64,12 +64,7 @@ protected $_class_label = 'control-label';
 				$html_element = $element->getView()->$helper( $element->getName (), $element->getValue (), $element->field_attribs );
 				break;
 			case 'formTextarea':
-				if (!empty($element->field_attribs)){
-					$element->field_attribs = array_merge($element->field_attribs,array ('rows' => '10' ));
-				}else{
-					$element->field_attribs = array ('rows' => '10' );
-				}
-				
+				$element->field_attribs = array ('rows' => '10' );
 				$html_element = $element->getView()->$helper( $element->getName (), $element->getValue (), $element->field_attribs );
 			break;
 			case 'formSelect':
@@ -106,7 +101,7 @@ protected $_class_label = 'control-label';
 		}
 		//Se settea los elementos html de inicio y fin para el html de errores
 		$form_errors_helper = $element->getView()->getHelper('formErrors');
-		$form_errors_helper	->setElementStart('<div class="alert alert-error alert-font-size">') 
+		$form_errors_helper	->setElementStart('<div class="alert alert-error">') 
                				->setElementSeparator('<br />') 
                				->setElementEnd('</div>'); 
 
