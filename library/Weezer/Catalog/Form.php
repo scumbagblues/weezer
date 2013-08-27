@@ -7,6 +7,7 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
 	const INT_CLASS 	= 'input-small';
 	const ENUM_CLASS    = 'span2';
 	const TEXTAREA_CLASS = 'span5';
+
 	
 	protected $_max_lenght;
 	protected $_table_form_name;
@@ -14,7 +15,7 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
 	protected $_action_form;
 	protected $_fields_decorators;
 	protected $_field_attribs;
-	protected $_decorators_default 	= array('Composite');
+	protected $_decorators_default 	= array('MultiColumns');
 	protected $_filters_default 		= array('StringTrim','StripTags');
 	protected $_label_submit;
 	
@@ -64,6 +65,12 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
 		
 		$this->setName( 'frm' . $this->_table_form_name );
 		$this->setAction('#');
+		/*
+		$this->setDecorators(array(
+				'FormElements',
+    			array('HtmlTag', array('tag' => 'div')),
+			));*/
+		
 		//Path hacia los decoradores
 		$this->addElementPrefixPaths(array(
 			'decorator' => array(
@@ -228,18 +235,18 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
 			case 'float':
 			case 'decimal':	
 				$element->html_type = 'text';
-				$element->class = self::INT_CLASS;
+				//$element->class = self::INT_CLASS;
 				$element->validator = array('Float');
 			break;
 			case 'varchar':
 				$element->html_type = 'text';
-				$element->class = self::TEXT_CLASS;
+				//$element->class = self::TEXT_CLASS;
 				$this->_max_lenght = $info_field['LENGTH'];
 				
 			break;
 			case 'enum':
 				$element->html_type = 'select';
-				$element->class = self::ENUM_CLASS;
+				//$element->class = self::ENUM_CLASS;
 				$element->multioptions = $this->_getArrayTypeEnum($field_type);
 			break;
 			case 'text':
@@ -249,11 +256,11 @@ class Weezer_Catalog_Form extends Weezer_Catalog_Form_Abstract{
 			break;
 			case 'datetime':
 				$element->html_type = 'text';
-				$element->class = self::TEXT_CLASS;
+				//$element->class = self::TEXT_CLASS;
 				$this->_max_lenght = '10';
 			break;	
 			default: $element->html_type = 'text';
-					 $element->class = self::TEXT_CLASS;
+					// $element->class = self::TEXT_CLASS;
 			break;
 		}
 		

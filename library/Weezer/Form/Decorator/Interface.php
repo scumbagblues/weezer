@@ -7,5 +7,5 @@
  */
 interface Weezer_Form_Decorator_Interface{
 	public function buildLabelInput();
-	public function buildLabelError();
+	public function buildErrors();
 }

@@ -3,7 +3,7 @@
 class Default_IndexController extends Weezer_Controller_Base
 {
 
-	protected $_table_user = 'Default_Model_Usuarios'; 
+	protected $_table_user = 'Default_Model_Difteria'; 
 	protected $_redirect_after_post = TRUE;
 	
     public function init()
